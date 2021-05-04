@@ -121,7 +121,7 @@
 
 </plugin>
 
-<plugin>
+<!-- <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.6</version>
@@ -163,9 +163,9 @@
                     <excludes>
                         <exclude>com/eldisol/jacoboot/JacobootApplication.class</exclude>
                     </excludes>
-                </configuration>
+                </configuration> -->
 
-</plugin>
+<!-- </plugin> -->
 
 			
 		</plugins>
