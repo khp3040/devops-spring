@@ -9,11 +9,9 @@
 	</parent>
 	<groupId>devops-springboot</groupId>
 	<artifactId>devops-springboot</artifactId>
-<<<<<<< HEAD
-	<version>0.0.1</version>
-=======
-	<version>0.1.1-SNAPSHOT</version>
->>>>>>> develop
+
+	<version>0.0.1-SNAPSHOT</version>
+
 	<packaging>war</packaging>
 	<name>devops-springboot</name>
 	<description>Demo project for Spring Boot</description>
