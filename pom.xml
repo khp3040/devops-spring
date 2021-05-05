@@ -163,9 +163,9 @@
                     <excludes>
                         <exclude>com/eldisol/jacoboot/JacobootApplication.class</exclude>
                     </excludes>
-                </configuration> -->
+                </configuration> 
 
-<!-- </plugin> -->
+</plugin> -->
 
 			
 		</plugins>
