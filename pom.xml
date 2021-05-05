@@ -10,7 +10,7 @@
 	<groupId>devops-springboot</groupId>
 	<artifactId>devops-springboot</artifactId>
 
-	<version>0.1.2-SNAPSHOT</version>
+	<version>0.1.5-SNAPSHOT</version>
 
 	<packaging>war</packaging>
 	<name>devops-springboot</name>
@@ -163,9 +163,9 @@
                     <excludes>
                         <exclude>com/eldisol/jacoboot/JacobootApplication.class</exclude>
                     </excludes>
-                </configuration> -->
+                </configuration> 
 
-<!-- </plugin> -->
+</plugin> -->
 
 			
 		</plugins>
