@@ -10,7 +10,7 @@
 	<groupId>devops-springboot</groupId>
 	<artifactId>devops-springboot</artifactId>
 	<version>0.1.5-SNAPSHOT</version>
-	<name>newdevops-springboot</name>
+	<name>devops-springboot</name>
 	<description>Demo project for Spring Boot</description>
 	<packaging>war</packaging>
 	<properties>
