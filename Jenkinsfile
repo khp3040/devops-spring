@@ -7,7 +7,7 @@ node{
 	}
 	
 	stage('Build'){
-		bat "'${mvnHome}/bin/mvn.bat' -Dmaven.test.failure.ignore clean package "
+		bat "'${mvnHome}\bin\mvn.bat' -Dmaven.test.failure.ignore clean package "
 	}
 	
 	stage('UnitTest'){
