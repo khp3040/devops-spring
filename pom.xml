@@ -1,63 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.4.5</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>devops-springboot</groupId>
 	<artifactId>devops-springboot</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<version>0.1.5-SNAPSHOT</version>
 	<name>devops-springboot</name>
 	<description>Demo project for Spring Boot</description>
+	<packaging>war</packaging>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
 	
 	<distributionManagement>
+		<repository>
+			<id>release</id>
+			<name>releases</name>
+			<url>http://localhost:8081/artifactory/libs-release-local</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshot</id>
+			<name>snapshots</name>
+			<url>http://localhost:8081/artifactory/libs-snapshot-local</url>
+		</snapshotRepository>
+	</distributionManagement>
 
-<repository>
-
-<id>release</id>
-
-<name>releases</name>
-
-<url>http://localhost:8081/artifactory/libs-release-local</url>
-
-</repository>
-
-<snapshotRepository>
-
-<id>snapshot</id>
-
-<name>snapshots</name>
-
-<url>http://localhost:8081/artifactory/libs-snapshot-local</url>
-
-</snapshotRepository>
-
-</distributionManagement>
-
-
-
-
-<scm>
-
-<connection>scm:git:git@github.com:khp3040/devops-springboot.git</connection>
-
-<developerConnection>scm:git:git@github.com:khp3040/devops-springboot.git</developerConnection>
-
-<url>git@github.com:khp3040/devops-springboot.git</url>
-
-<tag>v0.0.1</tag>
-
-</scm>
-	
-	
+	<scm>
+		<connection>scm:git:git@github.com:khp3040/devops-springboot.git</connection>
+		<developerConnection>scm:git:git@github.com:khp3040/devops-springboot.git</developerConnection>
+		<url>git@github.com:khp3040/devops-springboot.git</url>
+		<tag>v0.1.5</tag>
+	</scm>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -85,11 +63,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
@@ -97,30 +70,30 @@
 
 	<build>
 		<plugins>
+		
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			
-<plugin>
-
-<groupId>org.apache.maven.plugins</groupId>
-
-<artifactId>maven-release-plugin</artifactId>
-
-<version>2.5.1</version>
-
-<configuration>
-
-<tagNameFormat>v@{project.version}</tagNameFormat>
-
-<autoVersionSubmodules>true</autoVersionSubmodules>
-
-</configuration>
-
-</plugin>
-
-<!-- <plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>3.0.0-M1</version>
+				<configuration>
+					<tagNameFormat>v@{project.version}</tagNameFormat>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+  				<groupId>org.apache.maven.plugins</groupId>
+  				<artifactId>maven-surefire-plugin</artifactId>
+  
+			</plugin>
+			
+			
+			 <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.6</version>
@@ -150,7 +123,7 @@
                                         <limit>
                                             <counter>COMPLEXITY</counter>
                                             <value>COVEREDRATIO</value>
-                                            <minimum>0.40</minimum>
+                                            <minimum>0.37</minimum>
                                         </limit>
                                     </limits>
                                 </rule>
@@ -163,10 +136,8 @@
                         <exclude>com/eldisol/jacoboot/JacobootApplication.class</exclude>
                     </excludes>
                 </configuration>
-
-</plugin>
- -->
-			
+            </plugin>
+           
 		</plugins>
 	</build>
 
