@@ -6,7 +6,7 @@ node{
 		mvnHome = tool 'mvn'
 	}
 	
-	stage('Build){
+	stage('Build'){
 		if(isUnix()){
 			sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package "
 		}else{
