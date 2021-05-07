@@ -29,13 +29,12 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
     //select * from springboot_products where productName LIKE {pattern}
     // Eg: //select * from springboot_products where productName LIKE {%u%}
     Optional<List<Product>> findByProductNameLike(String productName);
+ 
+    //Case Insensitive
+    Optional<List<Product>> findByProductNameIgnoreCase(String productName);
     
     //select * from springboot_products where price IN ({price1},{price2},{price3}.....) 
     Optional<List<Product>> findByPriceIn(Collection<Double> prices);
     
-    //Case Insensitive
-    Optional<List<Product>> findByProductNameIgnoreCase(String productName);
-	
-	
 
 }

@@ -134,5 +134,13 @@ public class ProductAPI {
 	    (repository.findByProductName(productName.orElse("")).get(), HttpStatus.OK);
 	}
 	
+	@GetMapping("/find/ByName/IgnoreCase/{productname}")
+	public ResponseEntity<List<Product>> findProductsByNameByIgnoringCase
+	    (@RequestParam("productName") Optional<String> productName){
+	        
+	 return new ResponseEntity<List<Product>>
+	    (repository.findByProductNameIgnoreCase(productName.orElse("")).get(), HttpStatus.OK);
+	}
+	
 	
 }
