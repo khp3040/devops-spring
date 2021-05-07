@@ -122,8 +122,17 @@ public class ProductAPI {
 //	    (@RequestParam("productName") String productName){
 //	        
 //	 return new ResponseEntity<List<Product>>
-//	    (repository.findByProductNameLike(productName).get(),HttpStatus.OK);
+//	    (repository.findByProductNameLike(productName.orElse("")).get(),HttpStatus.OK);
 //	}	
-//	
+	
+
+	@GetMapping("/find/ByName/{productname}")
+	public ResponseEntity<List<Product>> findProductsByName
+	    (@RequestParam("productName") Optional<String> productName){
+	        
+	 return new ResponseEntity<List<Product>>
+	    (repository.findByProductName(productName.orElse("")).get(), HttpStatus.OK);
+	}
+	
 	
 }

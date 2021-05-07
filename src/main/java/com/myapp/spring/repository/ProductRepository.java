@@ -19,6 +19,9 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 	
 	//select * from springboot_products where price>={price}
 	Optional<List<Product>> findByPriceGreaterThanEqual(Double price);
+	
+	//select * from springboot_products where productName={productName}
+	Optional<List<Product>> findByProductName(String productName);
     
 	//select * from springboot_products where productName={productName} OR price={price}
     Optional<List<Product>> findByProductNameOrPrice(String productName,Double price);
