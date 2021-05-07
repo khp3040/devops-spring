@@ -1,5 +1,6 @@
 package com.myapp.spring.web.api;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -119,7 +120,7 @@ public class ProductAPI {
 	//http://localhost:8888/api/v1/products/find/ProductNameByLike/{%u%}
 	@GetMapping("/find/ProductNameByLike/{productname}")
 	public ResponseEntity<List<Product>> findProductNameByLike
-	    (@RequestParam("productName") String productName){
+	    (@PathVariable("productName") String productName){
 	        
 	 return new ResponseEntity<List<Product>>
 	    (repository.findByProductNameLike(productName).get(),HttpStatus.OK);
@@ -128,7 +129,7 @@ public class ProductAPI {
 
 	@GetMapping("/find/ByName/{productname}")
 	public ResponseEntity<List<Product>> findProductsByName
-	    (@RequestParam("productName") Optional<String> productName){
+	    (@PathVariable("productName") Optional<String> productName){
 	        
 	 return new ResponseEntity<List<Product>>
 	    (repository.findByProductName(productName.orElse("")).get(), HttpStatus.OK);
@@ -136,11 +137,19 @@ public class ProductAPI {
 	
 	@GetMapping("/find/ByName/IgnoreCase/{productname}")
 	public ResponseEntity<List<Product>> findProductsByNameByIgnoringCase
-	    (@RequestParam("productName") Optional<String> productName){
+	    (@PathVariable("productName") Optional<String> productName){
 	        
 	 return new ResponseEntity<List<Product>>
 	    (repository.findByProductNameIgnoreCase(productName.orElse("")).get(), HttpStatus.OK);
 	}
+	
+//	@GetMapping("/find/ByPriceIn/")
+//	public ResponseEntity<List<Product>> findProductsByPriceIn
+//	    (@RequestParam("price") Optional<Collection<Double>> price){
+//	        
+//	 return new ResponseEntity<List<Product>>
+//	    (repository.findByPriceIn(price.orElse()).get(), HttpStatus.OK);
+//	}
 	
 	
 }
