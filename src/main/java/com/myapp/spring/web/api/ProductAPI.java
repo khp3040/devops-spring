@@ -115,15 +115,15 @@ public class ProductAPI {
 	    (repository.findByProductNameOrPrice(productName.orElse(""), price.orElse(0.0)).get(), HttpStatus.OK);
 	}
 	
-//	//http://localhost:8888/api/v1/products/find/ProductNameByLike/{pattern}
-//	//http://localhost:8888/api/v1/products/find/ProductNameByLike/{%u%}
-//	@GetMapping("/find/ProductNameByLike/{productname}")
-//	public ResponseEntity<List<Product>> findProductNameByLike
-//	    (@RequestParam("productName") String productName){
-//	        
-//	 return new ResponseEntity<List<Product>>
-//	    (repository.findByProductNameLike(productName.orElse("")).get(),HttpStatus.OK);
-//	}	
+	//http://localhost:8888/api/v1/products/find/ProductNameByLike/{pattern}
+	//http://localhost:8888/api/v1/products/find/ProductNameByLike/{%u%}
+	@GetMapping("/find/ProductNameByLike/{productname}")
+	public ResponseEntity<List<Product>> findProductNameByLike
+	    (@RequestParam("productName") String productName){
+	        
+	 return new ResponseEntity<List<Product>>
+	    (repository.findByProductNameLike(productName).get(),HttpStatus.OK);
+	}	
 	
 
 	@GetMapping("/find/ByName/{productname}")
