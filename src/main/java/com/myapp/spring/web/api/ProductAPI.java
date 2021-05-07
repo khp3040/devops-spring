@@ -148,8 +148,8 @@ public class ProductAPI {
 //	    (@RequestParam("price") Optional<Collection<Double>> price){
 //	        
 //	 return new ResponseEntity<List<Product>>
-//	    (repository.findByPriceIn(price.orElse()).get(), HttpStatus.OK);
+//	    (repository.findByPriceIn(price.orElse([]).get(), HttpStatus.OK);
 //	}
-	
+//	
 	
 }
