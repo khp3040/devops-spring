@@ -1,0 +1,21 @@
+version: "3"
+services:
+  devops-springboot:
+    image: devops-springboot
+    ports:
+      - "6080:8888"
+    networks:
+      - ibm-mysql
+    depends_on:
+      - mysqldb
+ 
+  mysqldb:
+    image: mysql:8
+    networks:
+      - ibm-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=devops  
+
+networks:
+  ibm-mysql:
